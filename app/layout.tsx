@@ -41,10 +41,10 @@ export default function RootLayout({
 				<Providers>
 					<main className="  bg-slate-100  flex item-center flex-col gap-3">
 						<SideBar />
-						<div className="  ml-[17%]">
+						<div className="  ml-[16%]  px-8 ">
 							<Header />
 						</div>
-						<div className="  ml-[16%]">
+						<div className="  ml-[16%] px-4  ">
 							{children}
 						</div>
 

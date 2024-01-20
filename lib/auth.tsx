@@ -34,7 +34,7 @@ export const googleAuth = async () => {
 
 export const createUserProfile = (user: User) => {
     const ref = doc(db, 'users', user.uid)
-    setDoc(ref, {
+     return setDoc(ref, {
         id: user.uid,
         name: user.displayName,
         email: user.email,
