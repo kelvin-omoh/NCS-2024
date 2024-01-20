@@ -63,10 +63,10 @@ export default function Home() {
 	}
 	return (
 		<>
-		<section className=" flex gap-5 h-[200vh]   ">
-				<SideBar/>
+		<section className=" flex gap-5 h-[200vh] p-4   ">
+				{/* <SideBar/>
 				<div className="  ml-[17%]">
-				<Header/>
+				<Header/> */}
 
 
 
@@ -172,7 +172,7 @@ export default function Home() {
 
 			
 
-				</div>
+				{/* </div> */}
 
 		</section>
 
