@@ -38,25 +38,18 @@ export default function RootLayout({
 					fontSans.variable
 				)}
 			>
-				<Providers >
-<<<<<<< HEAD
-					
-						<main className="  bg-slate-100  ">
-						<SideBar/>
-				<div className="  ml-[17%]">
-				<Header/>
-				</div>
-				<div className="  ml-[16%]">
-					{children}
-				</div>
-							
-						</main>
-						
-=======
-					<main className="bg-slate-100">
-						{children}
+				<Providers>
+					<main className="  bg-slate-100  flex item-center flex-col gap-3">
+						<SideBar />
+						<div className="  ml-[17%]">
+							<Header />
+						</div>
+						<div className="  ml-[16%]">
+							{children}
+						</div>
+
 					</main>
->>>>>>> 796fba8 (Firebase setup)
+
 				</Providers>
 			</body>
 		</html>
