@@ -3,8 +3,6 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 import SideBar from "@/components/SideBar";
 import Header from "@/components/Header";
@@ -40,19 +38,18 @@ export default function RootLayout({
 					fontSans.variable
 				)}
 			>
-				<Providers >
-					
-						<main className="  bg-slate-100  ">
-						<SideBar/>
-				<div className="  ml-[17%]">
-				<Header/>
-				</div>
-				<div className="  ml-[16%]">
-					{children}
-				</div>
-							
-						</main>
-						
+				<Providers>
+					<main className="  bg-slate-100  flex item-center flex-col gap-3">
+						<SideBar />
+						<div className="  ml-[17%]">
+							<Header />
+						</div>
+						<div className="  ml-[16%]">
+							{children}
+						</div>
+
+					</main>
+
 				</Providers>
 			</body>
 		</html>
