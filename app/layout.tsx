@@ -3,8 +3,6 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 import SideBar from "@/components/SideBar";
 import Header from "@/components/Header";
@@ -41,6 +39,7 @@ export default function RootLayout({
 				)}
 			>
 				<Providers >
+<<<<<<< HEAD
 					
 						<main className="  bg-slate-100  ">
 						<SideBar/>
@@ -53,6 +52,11 @@ export default function RootLayout({
 							
 						</main>
 						
+=======
+					<main className="bg-slate-100">
+						{children}
+					</main>
+>>>>>>> 796fba8 (Firebase setup)
 				</Providers>
 			</body>
 		</html>
