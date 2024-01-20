@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <div className=' flex border-b-2 pb-5 gap-[4em] items-center justify-between '>
       <div className=' flex flex-col'>
-        <h1 className=' text-[1.5em]  font-bold'>{username}</h1>
+        <h1 onClick={()=>googleAuth()} className=' text-[1.5em]  font-bold'>{username}</h1>
         <p>Welcome back to Learn Verse</p>
       </div>
 
