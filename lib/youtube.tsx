@@ -46,7 +46,7 @@ export async function getQuestionsFromTranscript(
         option3: string;
     };
     const questions: Question[] = await strict_output(
-        "Generate multiple-choice questions (MCQ) and answers, ensuring each answer is under 15 words, with one correct option for each question. Combine results from five JSON files into an array.",
+        "Generate multiple-choice questions (MCQ) and answers, ensuring each answer is under 15 words as is among the options. Combine results from five JSON into an array.",
         new Array(5).fill(
             `You are to generate a random hard mcq question about ${course_title} with context of the following transcript: ${transcript}`
         ),
