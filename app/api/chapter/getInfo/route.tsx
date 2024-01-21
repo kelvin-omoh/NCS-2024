@@ -10,22 +10,28 @@ import { z } from "zod";
 
 const bodyParser = z.object({
     chapterId: z.string(),
+    courseId: z.string(),
+    unitId: z.string(),
 });
+
+function shuffleArray(array: Array<any>) {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+}
 
 export async function POST(req: Request, res: Response) {
     try {
         const body = await req.json();
-        const { chapterId } = bodyParser.parse(body);
+        const { chapterId, courseId, unitId } = bodyParser.parse(body);
 
-        const response = await db.collectionGroup('chapters').where('id', '==', chapterId).limit(1).get()
+        const response = await db.collectionGroup('chapters').where('id', '==', chapterId).where('courseId', '==', courseId).where('unitId', '==', unitId).limit(1).get()
         const doc = response.docs[0]
         const chapter = doc.data()
 
-        // const chapter = await prisma.chapter.findUnique({
-        //   where: {
-        //     id: chapterId,
-        //   },
-        // });
         if (!doc.exists) {
             return NextResponse.json(
                 {
@@ -42,7 +48,7 @@ export async function POST(req: Request, res: Response) {
         transcript = transcript.split(" ").slice(0, maxLength).join(" ");
 
         const { summary }: { summary: string } = await strict_output(
-            "You are an AI capable of summarising a youtube transcript",
+            "You are an AI capable of summarising a youtube transcript that will follow the output format of json with key summary ",
             "summarise in 250 words or less and do not talk of the sponsors or anything unrelated to the main topic, also do not introduce what the summary is about.\n" +
             transcript,
             { summary: "summary of the transcript" }
@@ -53,36 +59,24 @@ export async function POST(req: Request, res: Response) {
             chapter.name
         );
 
-        console.log(questions)
+        const randomQuestions = shuffleArray(questions)
 
-        // await prisma.question.createMany({
-        //   data: questions.map((question) => {
-        //     let options = [
-        //       question.answer,
-        //       question.option1,
-        //       question.option2,
-        //       question.option3,
-        //     ];
-        //     options = options.sort(() => Math.random() - 0.5);
-        //     return {
-        //       question: question.question,
-        //       answer: question.answer,
-        //       options: JSON.stringify(options),
-        //       chapterId: chapterId,
-        //     };
-        //   }),
-        // });
+        if (randomQuestions.length > 0) {
+            for (let i = 0; i < randomQuestions.length; i++) {
+                const q = randomQuestions[i]
+                const qColl = await doc.ref.collection('questions').add(q)
+                await qColl.update({ questionId: qColl.id, chapterId, courseId, unitId })
+            }
+        }
 
-        // await prisma.chapter.update({
-        //   where: { id: chapterId },
-        //   data: {
-        //     videoId: videoId,
-        //     summary: summary,
-        //   },
-        // });
+        await doc.ref.update({
+            videoId: videoId,
+            summary: summary,
+        })
 
-        return NextResponse.json({ success: true });
+        return NextResponse.json({ success: true, randomQuestions, summary });
     } catch (error) {
+        console.log(error)
         if (error instanceof z.ZodError) {
             return NextResponse.json(
                 {

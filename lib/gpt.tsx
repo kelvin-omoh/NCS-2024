@@ -75,9 +75,6 @@ export async function strict_output(
         const result = await chat.sendMessage(msg);
 
         const response = result.response;
-        console.log(response.text());
-
-        // return response
 
         let res: string = response.candidates![0].content.parts[0].text?.replace(/'/g, '"') ?? "";
 

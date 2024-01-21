@@ -53,6 +53,7 @@ export async function POST(req: Request, res: Response) {
         const { id, parent } = await db.collection('courses').add({
             name: title,
             image: course_image,
+            type: 'paid'
         })
 
         for (const unit of output_units) {
@@ -74,17 +75,6 @@ export async function POST(req: Request, res: Response) {
                 await c.update({ id: c.id })
             }
         }
-
-        // await prisma.user.update({
-        //     where: {
-        //         id: session.user.id,
-        //     },
-        //     data: {
-        //         credits: {
-        //             decrement: 1,
-        //         },
-        //     },
-        // });
 
         return NextResponse.json({
             course_id: id
