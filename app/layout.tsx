@@ -6,7 +6,7 @@ import { Providers } from "./providers";
 import clsx from "clsx";
 import SideBar from "@/components/SideBar";
 import Header from "@/components/Header";
-
+import toast, { Toaster } from 'react-hot-toast';
 export const metadata: Metadata = {
 	title: {
 		default: siteConfig.name,
@@ -38,6 +38,10 @@ export default function RootLayout({
 					fontSans.variable
 				)}
 			>
+				<Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
 				<Providers>
 					<main className="  bg-slate-100  flex item-center flex-col gap-3">
 						<SideBar />

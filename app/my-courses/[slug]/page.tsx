@@ -18,7 +18,7 @@ interface PageProps {
 
 const courseDetails=[
     {
-        tittle:"Intro",
+        tittle:"Introduction",
         date:"16th January 2024",
         access:true,
         checked:true,
@@ -96,9 +96,9 @@ const Page: React.FC<PageProps> = ({ params }: { params: {slug: any } }) => {
   <div className=' '>
   {courseDetails.map((courseDetails ,i)=>(
     <div className="relative  text-[.5em]  ">
-      <h1 className="mt-6 block border-l-4 w-[20em] border-dotted px-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit Cumque quidem id {courseDetails.tittle}</h1>
+      <h1 className="mt-6 block border-l-4 w-[20em] font-semi-bold border-dotted px-4">{courseDetails.tittle}</h1>
       <h1 className="mt-2 text-gray-400   block border-l-4 w-[20em] border-dotted px-4"> Last Accessed:{courseDetails.date}</h1>
-      <div className="absolute top-0 ml-[-1.9em] font-bold h-4 w-4 rounded-full  text-center flex justify-center items-center text-white px-4 py-4 bg-blue-600"> 
+      <div className="absolute top-0 ml-[-1.4em] text-[2.2em] font-bold h-4 w-4 rounded-full  text-center flex justify-center items-center text-white px-4 py-4 bg-blue-600"> 
       {/* 1 */}
       {courseDetails.checked === true ? <button className=' bg-blue-500 rounded-full   '> <AiOutlineCheck size={20}/></button> :`${i+1}` }
      

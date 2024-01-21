@@ -8,7 +8,7 @@ import { AiOutlineBell, AiOutlineSearch, AiOutlineUser } from 'react-icons/ai'
 const Header = () => {
   const { user } = useAuth()
 
-  const username = user?.displayName ?? 'Darrel Enaikele'
+  const username = user?.displayName ?? 'Hello Guest'
 
   return (
     <div className=' flex border-b-2 pb-5 gap-[4em] items-center justify-between '>
