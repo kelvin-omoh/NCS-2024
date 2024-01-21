@@ -1,3 +1,4 @@
+import { db } from "@/config/admin";
 import { strict_output } from "@/lib/gpt";
 import {
     getQuestionsFromTranscript,
@@ -15,22 +16,27 @@ export async function POST(req: Request, res: Response) {
     try {
         const body = await req.json();
         const { chapterId } = bodyParser.parse(body);
+
+        const response = await db.collectionGroup('chapters').where('id', '==', chapterId).limit(1).get()
+        const doc = response.docs[0]
+        const chapter = doc.data()
+
         // const chapter = await prisma.chapter.findUnique({
         //   where: {
         //     id: chapterId,
         //   },
         // });
-        // if (!chapter) {
-        //   return NextResponse.json(
-        //     {
-        //       success: false,
-        //       error: "Chapter not found",
-        //     },
-        //     { status: 404 }
-        //   );
-        // }
-        const videoId = await searchYoutube('Volumes by Integration: Crash Course Calculus')//chapter.youtubeSearchQuery);
-        console.log(videoId)
+        if (!doc.exists) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Chapter not found",
+                },
+                { status: 404 }
+            );
+        }
+
+        const videoId = await searchYoutube(chapter.youtubeSearchQuery);
         let transcript = await getTranscript(videoId);
         let maxLength = 500;
         transcript = transcript.split(" ").slice(0, maxLength).join(" ");
@@ -42,11 +48,9 @@ export async function POST(req: Request, res: Response) {
             { summary: "summary of the transcript" }
         );
 
-        console.log(summary)
-
         const questions = await getQuestionsFromTranscript(
             transcript,
-            'Volumes by Integration', // chapter.name
+            chapter.name
         );
 
         console.log(questions)
