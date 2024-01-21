@@ -77,60 +77,57 @@ export default function Home() {
 				{/* Left */}
 				<section className=" flex gap-4 justify-between w-full  ">
 					<div>
-						<h1>Learning Overview</h1>
+						<h1 className="text-xl font-medium mb-6">Learning Overview</h1>
 
 						<div className=" flex justify-between gap-3 items-center">
 							{cards.firstCard.map(card => (
-								<div className=" text-black w-[20rem] bg-white  text-[.9em] pb-4 shadow-lg   rounded-lg ">
-									<div className=" bg-black  px-3 py-1 rounded-t-xl text-white flex gap-4  items-center   justify-start">
-
+								<div className=" text-black w-[20rem] bg-white  text-[.9em] pb-1 shadow-lg rounded">
+									<div className="bg-black h-11 px-3 py-2 rounded-t-xl text-white flex gap-3 items-center text-sm justify-start font-normal">
 										{card.icon}
 										<h1>{card.title}</h1>
 									</div>
-									<div className=" flex flex-col  py-2  px-3">
-										<p className=" text-slate-400">Total</p>
-										<h1 className=" my-3 text-[1.8em] font-bold">{card.total} Course</h1>
-										<h1 className=" my-0 font-bold text-blue-600 gap-3 text-[1.5em] flex justify-start items-center  ">View Details <BsChevronRight size={20} /></h1>
+									<div className="flex flex-col py-2 px-3 rounded-b-xl">
+										<p className="text-slate-400 text-sm font-medium mt-1">Total</p>
+										<h1 className="mt-1 mb-3 text-2xl font-semibold">{card.total} Course</h1>
+										<h1 className="dm-sans font-medium text-blue-600 gap-1 text-base flex justify-start items-center cursor-pointer">View details <BsChevronRight className="mt-px" size={12} /></h1>
 									</div>
 
 								</div>
 							))}
 						</div>
-						<div className=" my-6 py-6 rounded-xl text-white px-[3em] bg-[url(../assets/pattern.jpeg)] w-[50%] h-[30vh]     " style={{ backgroundImage: "url('../assets/pattern.jpeg')`" }}>
-							<h1 className=" text-[1.4em]  ">Valid 2 weeks before class start </h1>
-							<h1 className=" text-[2em] font-bold ">Valid 2 weeks before class start </h1>
-							<div className=" flex gap-4">
-								<button className=" bg-blue-500 px-4 py-2 rounded-lg font-bold ">Bootcamp details </button>
-								<button className=" bg-white text-blue-500 px-4 py-2 rounded-lg font-bold ">Contact us </button>
-							</div>
 
+						<div className="opcaity-25 my-6 py-6 rounded-xl text-white px-4 bg-[url(../assets/pattern.jpeg)] w-1/3 h-[28vh]" style={{ backgroundImage: "url('../assets/pattern.jpeg')`" }}>
+							<h1 className="text-sm font-medium dm-sans">Valid 2 weeks before class start </h1>
+							<h1 className="py-4 text-xl max-w-sm font-medium">Valid 2 weeks before class start </h1>
+							<div className=" flex gap-4 pt-10">
+								<button className=" text-sm bg-blue-500 px-4 py-2 rounded-xl font-medium">Bootcamp details </button>
+								<button className=" text-sm bg-white text-blue-500 px-4 py-2 rounded-xl font-medium ">Contact us </button>
+							</div>
 						</div>
 
 
-						<div className=" flex  justify-between  w-full">
-							<h1>Popular Courses</h1>
-							<button className=" text-[1.5em]  font-bold text-blue-600 flex gap-2 items-center justify-center">
-								View all <BsChevronRight size={20} />
+						<div className=" flex  justify-between  w-full h-10">
+							<h1 className="text-xl font-medium">Popular Courses</h1>
+							<button className=" text-sm dm-sans font-medium text-blue-600 flex gap-2 items-center justify-center">
+								View all <BsChevronRight size={14} />
 							</button>
 						</div>
-						<div className=" flex  w-full  justify-between gap-4">
+						<div className=" flex  w-full  justify-between gap-1">
 
 
-							<div className=" flex w-full justify-between ">
+							<div className=" flex w-full justify-between gap-5">
 
 								{cards.popularCourses.map((course) => (
 									<div
 										key={course.title}
-										className="course-card  h-[4em] w-[20rem]" // Add a generic class name for styling
-
+										className="course-card  bg-white h-full rounded-xl h-[4em] w-[20rem]" // Add a generic class name for styling
 									>
+										<Image className="px-2 py-2 h-48 object-cover rounded-xl" src={devops} alt="w" />
 
-										<Image className="  h-fit w-fit object-contain  " src={devops} alt="w" />
-
-										<div>
+										<div className="px-3 pb-3">
 											<h1 className=" text-[1.1em] font-bold" >${course.price}</h1>
-											<h1 className=" text-[1.3em] ">{course.title}</h1>
-											<h1 className=" text-[1.6em] " >{course.subtitle}</h1>
+											<h1 className=" text-sm text-gray-500 font-medium ">{course.title}</h1>
+											<h1 className=" text-lg font-semibold dm-sans w-60 truncate" >{course.subtitle}</h1>
 										</div>
 									</div>
 								))}
