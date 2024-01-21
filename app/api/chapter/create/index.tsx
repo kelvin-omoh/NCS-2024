@@ -3,9 +3,18 @@ import { createChaptersSchema } from "@/validators/course";
 import { ZodError } from "zod";
 import { strict_output } from "@/lib/gpt";
 import { getUnsplashImage } from "@/lib/unsplash";
+import { db } from "@/config/admin";
 
 export async function POST(req: Request, res: Response) {
     try {
+        // const session = await getAuthSession();
+        // if (!session?.user) {
+        //     return new NextResponse("unauthorised", { status: 401 });
+        // }
+        // const isPro = await checkSubscription();
+        // if (session.user.credits <= 0 && !isPro) {
+        //     return new NextResponse("no credits", { status: 402 });
+        // }
         const body = await req.json();
         const { title, units } = createChaptersSchema.parse(body);
 
@@ -41,7 +50,45 @@ export async function POST(req: Request, res: Response) {
             imageSearchTerm.image_search_term
         );
 
-        return NextResponse.json({ course_image, output_units });
+        const { id, parent } = await db.collection('courses').add({
+            name: title,
+            image: course_image,
+        })
+
+        for (const unit of output_units) {
+            const title = unit.title;
+            const res = await parent.doc(id).collection('units').add({
+                name: title,
+                courseId: id,
+            })
+            const unitId = res.id
+
+            for (let i = 0; i < unit.chapters.length; i++) {
+                var chapter = unit.chapters[i]
+                const c = await res.collection('chapters').add({
+                    name: chapter.chapter_title,
+                    youtubeSearchQuery: chapter.youtube_search_query,
+                    unitId,
+                    courseId: id,
+                })
+                await c.update({ id: c.id })
+            }
+        }
+
+        // await prisma.user.update({
+        //     where: {
+        //         id: session.user.id,
+        //     },
+        //     data: {
+        //         credits: {
+        //             decrement: 1,
+        //         },
+        //     },
+        // });
+
+        return NextResponse.json({
+            course_id: id
+        });
     } catch (error) {
         if (error instanceof ZodError) {
             return new NextResponse("invalid body", { status: 400 });

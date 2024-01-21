@@ -1,11 +1,7 @@
-import OpenAI from 'openai';
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai'
+import { GoogleGenerativeAI } from '@google/generative-ai'
 
-const modelName = 'gemini-pro'
-
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
+const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
 
 interface OutputFormat {
     [key: string]: string | string[] | OutputFormat;
@@ -17,7 +13,7 @@ export async function strict_output(
     output_format: OutputFormat,
     default_category: string = "",
     output_value_only: boolean = false,
-    model: string = "gpt-3.5-turbo",
+    // model: string = "gpt-3.5-turbo",
     temperature: number = 1,
     num_tries: number = 3,
     verbose: boolean = false
@@ -31,6 +27,14 @@ export async function strict_output(
 
     // start off with no error message
     let error_msg: string = "";
+
+
+    const generationConfig = {
+        temperature,
+        topK: 1,
+        topP: 1,
+        maxOutputTokens: 2048,
+    };
 
     for (let i = 0; i < num_tries; i++) {
         let output_format_prompt: string = `\nYou are to output ${list_output && "an array of objects in"
@@ -52,21 +56,32 @@ export async function strict_output(
             output_format_prompt += `\nGenerate an array of json, one json for each input element.`;
         }
 
-        const response = await openai.chat.completions.create({
-            messages: [
+        const chat = model.startChat({
+            history: [
                 {
-                    role: "system",
-                    content: system_prompt + output_format_prompt + error_msg,
+                    role: "user",
+                    parts: "Hello, I want to learn.",
                 },
-                { role: "user", content: user_prompt.toString() },
+                {
+                    role: "model",
+                    parts: system_prompt + output_format_prompt + error_msg,
+                },
             ],
-            model,
-            temperature
+            generationConfig,
         });
 
-        let res: string = response.choices[0].message?.content?.replace(/'/g, '"') ?? "";
+        const msg = user_prompt.toString();
 
-        // ensure that we don't replace away apostrophes in text
+        const result = await chat.sendMessage(msg);
+
+        const response = result.response;
+        console.log(response.text());
+
+        // return response
+
+        let res: string = response.candidates![0].content.parts[0].text?.replace(/'/g, '"') ?? "";
+
+        // // ensure that we don't replace away apostrophes in text
         res = res.replace(/(\w)"(\w)/g, "$1'$2");
 
         if (verbose) {
