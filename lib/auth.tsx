@@ -11,7 +11,8 @@ import {
 import {
     doc,
     setDoc,
-    serverTimestamp
+    serverTimestamp,
+    getDoc
 } from 'firebase/firestore'
 
 export const login = async (email: string, password: string) => {
@@ -40,5 +41,14 @@ export const createUserProfile = (user: User) => {
         email: user.email,
         joined: serverTimestamp(),
         credits: 1,
+        courses_attempted: 0,
+        courses_completed: 0
     })
+}
+
+export const getUser = async (uid: string) => {
+    const ref = doc(db, 'users', uid)
+    const res = await getDoc(ref)
+
+    return res.data();
 }
