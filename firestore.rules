@@ -22,6 +22,14 @@ service cloud.firestore {
 
     match /courses/{courseId} {
       allow read;
+
+      match /units/{unitId} {
+        allow read;
+
+        match /chapters/{chapterId} {
+          allow read;
+        }
+      }
     }
   }
 }

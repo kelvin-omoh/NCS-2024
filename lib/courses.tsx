@@ -15,3 +15,18 @@ export const getCourseDetails = (id: string) => {
 }
 
 export const getCourseRef = () => collection(db, 'courses')
+
+export const getUnits = (courseId: string) => {
+    var ref = collection(db, 'courses', courseId, 'units')
+    return ref
+}
+
+export const getChapter = (courseId: string, unitId: string) => {
+    var ref = collection(db, 'courses', courseId, 'units', unitId, 'chapters')
+    return ref
+}
+
+export const getQuestions = (courseId: string, unitId: string, chapterId: string) => {
+    var ref = collection(db, 'courses', courseId, 'units', unitId, 'chapters', chapterId, 'questions')
+    return ref
+}
