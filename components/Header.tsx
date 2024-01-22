@@ -1,9 +1,7 @@
 'use client'
 
-import { dm_sans } from '@/config/fonts'
 import { googleAuth } from '@/lib/auth'
 import useAuth from '@/provider/auth'
-import clsx from 'clsx'
 import React from 'react'
 import { AiOutlineBell, AiOutlineSearch, AiOutlineUser } from 'react-icons/ai'
 
@@ -13,7 +11,7 @@ const Header = () => {
   const username = user?.displayName ?? 'Hello Guest'
 
   return (
-    <div className='flex border-b-2 pt-4 pb-5 gap-[4em] items-center justify-between'>
+    <div className='sticky bg-white z-20 top-0 flex border-b-2 pt-4 pb-5 gap-[4em] items-center justify-between px-5'>
       <div className='mt-1 flex flex-col'>
         <h1 onClick={() => googleAuth()} className='text-2xl font-normal'>{username}</h1>
         <p
@@ -22,7 +20,7 @@ const Header = () => {
         >Welcome back to Learn Verse</p>
       </div>
 
-      <div className=' flex justify-center shadow-lg rounded-lg px-3 items-center gap-4 bg-white'>
+      <div className='flex justify-center shadow-lg rounded-lg px-3 items-center gap-4 bg-white'>
         <AiOutlineSearch className='text-gray-600' size={24} />
         <input type="text" className=' w-[30vw] text-[1.2em] py-3 outline-none text-gray-600 text-sm font-medium' placeholder=' search Course' />
       </div>

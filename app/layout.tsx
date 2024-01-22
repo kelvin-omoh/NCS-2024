@@ -14,15 +14,6 @@ export const metadata: Metadata = {
 		template: `%s - ${siteConfig.name}`,
 	},
 	description: siteConfig.description,
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "black" },
-	],
-	icons: {
-		icon: "/favicon.ico",
-		shortcut: "/favicon-16x16.png",
-		apple: "/apple-touch-icon.png",
-	},
 };
 
 export default function RootLayout({
@@ -45,16 +36,19 @@ export default function RootLayout({
 					reverseOrder={false}
 				/>
 				<Providers>
-					<main className="bg-slate-100  flex item-center flex-col gap-3">
+					<div className="flex">
 						<SideBar />
-						<div className="ml-[16%]  px-8 ">
-							<Header />
-						</div>
-						<div className="ml-[16%] px-4  ">
-							{children}
-						</div>
 
-					</main>
+						<div className="flex-1 w-4/5">
+							<div className="ml-[20%]">
+								<div className="flex-1">
+									<Header />
+
+									{children}
+								</div>
+							</div>
+						</div>
+					</div>
 
 				</Providers>
 			</body>

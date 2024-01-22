@@ -87,7 +87,7 @@ const SideBar = () => {
   }
 
   return (
-    <div className=' h-[100vh] shadow-xl px-7  fixed top-0 left-0  bg-[white] w-1/6'>
+    <div className=' h-[100vh] shadow-xl px-7 fixed top-0 left-0  bg-[white] w-1/5'>
       <ul className='mb-9'>
         <li className=' flex text-[1.4em] pt-9 font-bold items-center'><Image className=' h-[2rem] w-[2rem] flex flex-col mr-3 rounded-full ' src={Logo} alt='' /> LearnVerse</li>
       </ul>

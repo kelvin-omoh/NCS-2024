@@ -9,3 +9,7 @@ html {
 .dm-sans {
     font-family: var(--font-dm-sans);
 }
+
+.loader {
+    height: 70vh;
+}

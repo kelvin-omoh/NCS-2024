@@ -19,5 +19,9 @@ service cloud.firestore {
       allow read: if isAssigned(userId);
       allow update: if doesNotChange(['credits']);
     }
+
+    match /courses/{courseId} {
+      allow read;
+    }
   }
 }

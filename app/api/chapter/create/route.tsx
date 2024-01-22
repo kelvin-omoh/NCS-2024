@@ -53,7 +53,10 @@ export async function POST(req: Request, res: Response) {
         const { id, parent } = await db.collection('courses').add({
             name: title,
             image: course_image,
-            type: 'paid'
+            type: 'paid',
+            price: 100,
+            description: 'hmnn',
+            units
         })
 
         for (const unit of output_units) {
