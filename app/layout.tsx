@@ -1,27 +1,19 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import clsx from "clsx";
 import SideBar from "@/components/SideBar";
 import Header from "@/components/Header";
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+import { poppins } from "@/config/fonts";
+
 export const metadata: Metadata = {
 	title: {
 		default: siteConfig.name,
 		template: `%s - ${siteConfig.name}`,
 	},
 	description: siteConfig.description,
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "black" },
-	],
-	icons: {
-		icon: "/favicon.ico",
-		shortcut: "/favicon-16x16.png",
-		apple: "/apple-touch-icon.png",
-	},
 };
 
 export default function RootLayout({
@@ -29,30 +21,34 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head />
 			<body
 				className={clsx(
 					"min-h-screen bg-background font-sans antialiased",
-					fontSans.variable
+					poppins.className,
 				)}
 			>
 				<Toaster
-  position="top-center"
-  reverseOrder={false}
-/>
+					position="top-center"
+					reverseOrder={false}
+				/>
 				<Providers>
-					<main className="  bg-slate-100  flex item-center flex-col gap-3">
+					<div className="flex">
 						<SideBar />
-						<div className="  ml-[16%]  px-8 ">
-							<Header />
-						</div>
-						<div className="  ml-[16%] px-4  ">
-							{children}
-						</div>
 
-					</main>
+						<div className="flex-1 w-4/5">
+							<div className="ml-[20%]">
+								<div className="flex-1">
+									<Header />
+
+									{children}
+								</div>
+							</div>
+						</div>
+					</div>
 
 				</Providers>
 			</body>
