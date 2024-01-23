@@ -14,10 +14,10 @@ import Logo from '../assets/logo.png'
 
 const SideBar = () => {
   const links = [
-    { text: 'Dashboard', icon: AiFillHome, link: "/" },
-    { text: 'My Course', icon: AiOutlineBook, link: "my-courses" },
-    { text: 'Explore Course', icon: AiTwotoneCalendar, link: "explore-courses" },
-    { text: 'Learn Progress', icon: HiOutlineBadgeCheck, link: "" },
+    { text: 'Human Resource', icon: AiFillHome, link: "/" },
+    { text: 'Performance appraisal', icon: AiOutlineBook, link: "performance-appraisal" },
+    { text: 'Employment Details', icon: AiTwotoneCalendar, link: "explore-courses" },
+    { text: 'Report & Analysis', icon: HiOutlineBadgeCheck, link: "" },
     { text: 'Settings', icon: AiOutlineSetting, link: "/" },
   ]
 
