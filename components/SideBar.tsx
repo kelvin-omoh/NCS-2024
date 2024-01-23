@@ -58,10 +58,11 @@ const SideBar = () => {
               </div>
               <div className="ml-3 flex-1">
                 <p className="text-sm font-medium text-gray-900">
-                  Learn Verse
+                 JAKS
                 </p>
+             
                 <p className="mt-1 text-sm text-gray-500">
-                  Welcome to the Home of Knowledge to  explore and discover the endless realms of learning.
+                Welcome to the Home of Justified Assessment & Key Solutions (JAKS), where excellence meets performance in our Human Resource system.
                 </p>
               </div>
             </div>
@@ -89,7 +90,10 @@ const SideBar = () => {
     <div className=' h-[100vh] shadow-xl px-7 fixed top-0 left-0  bg-[white] w-1/5'>
       <ul className='mb-9'>
         <li className=' flex text-[1.4em] pt-9 font-bold items-center'>
-          <Image className=' h-[2rem] w-[2rem] flex flex-col mr-3 rounded-full ' src={Logo} alt='' /> LearnVerse</li>
+          <Image className=' h-[2rem] w-[2rem] flex flex-col mr-3 rounded-full ' src={Logo} alt='' /> JAKS</li>
+          <p className="text-[.6em] my-4 font-medium text-gray-400">
+                Justified Assessment & Key Solutions
+                </p>
       </ul>
       <ul className='flex h-full pt-4 flex-col justify-start gap-[2em]'>
         {links.map((link) => <Link href={`/${link.link}`} className='flex gap-3 decoration-white hover:underline hover:underline-offset-8 items-center justify-start hover:fill-blue-800 hover:bg-black hover:py-3 hover:px-4 rounded-xl hover:text-white cursor-pointer transition-all ease-in duration-300'>{<link.icon size={20} />} {link.text} </Link>)}
