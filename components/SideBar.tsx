@@ -15,7 +15,7 @@ import Logo from '../assets/logo.png'
 const SideBar = () => {
   const links = [
     { text: 'Human Resource', icon: AiFillHome, link: "/" },
-    { text: 'Performance appraisal', icon: AiOutlineBook, link: "performance-appraisal" },
+    { text: 'Performance Appraisal', icon: AiOutlineBook, link: "performance-appraisal" },
     { text: 'Employment Details', icon: AiTwotoneCalendar, link: "explore-courses" },
     { text: 'Report & Analysis', icon: HiOutlineBadgeCheck, link: "" },
     { text: 'Settings', icon: AiOutlineSetting, link: "/" },
@@ -58,11 +58,11 @@ const SideBar = () => {
               </div>
               <div className="ml-3 flex-1">
                 <p className="text-sm font-medium text-gray-900">
-                 JAKS
+                  JAKS
                 </p>
-             
+
                 <p className="mt-1 text-sm text-gray-500">
-                Welcome to the Home of Justified Assessment & Key Solutions (JAKS), where excellence meets performance in our Human Resource system.
+                  Welcome to the Home of Justified Assessment & Key Solutions (JAKS), where excellence meets performance in our Human Resource system.
                 </p>
               </div>
             </div>
@@ -94,6 +94,7 @@ const SideBar = () => {
           <p className="text-[.7em] my-4 font-medium text-blue-400">
                 Justified Assessment & Key Solutions
                 </p>
+
       </ul>
       <ul className='flex h-full pt-4 flex-col justify-start gap-[2em]'>
         {links.map((link) => <Link href={`/${link.link}`} className='flex gap-3 decoration-white hover:underline hover:underline-offset-8 items-center justify-start hover:fill-blue-800 hover:bg-black hover:py-3 hover:px-4 rounded-xl hover:text-white cursor-pointer transition-all ease-in duration-300'>{<link.icon size={20} />} {link.text} </Link>)}

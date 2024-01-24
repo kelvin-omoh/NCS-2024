@@ -7,6 +7,7 @@ import SideBar from "@/components/SideBar";
 import Header from "@/components/Header";
 import { Toaster } from 'react-hot-toast';
 import { poppins } from "@/config/fonts";
+import DialogViewer from "@/components/dialog";
 
 export const metadata: Metadata = {
 	title: {
@@ -35,6 +36,9 @@ export default function RootLayout({
 					position="top-center"
 					reverseOrder={false}
 				/>
+
+				<DialogViewer />
+
 				<Providers>
 					<div className="flex">
 						<SideBar />
