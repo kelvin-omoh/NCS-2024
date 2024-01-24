@@ -6,7 +6,16 @@ export const employeeData=[
     "Sex": "Male",
     "Age": 25,
     "Position": "Software Developer",
-    "Department": "ICT"
+    "Department": "ICT",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":5
   },
   {
     "EmployeeID": "ADW002",
@@ -15,7 +24,16 @@ export const employeeData=[
     "Sex": "Female",
     "Age": 28,
     "Position": "Data Analyst",
-    "Department": "Analytics"
+    "Department": "Analytics",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":5
   },
   {
     "EmployeeID": "ADW003",
@@ -24,7 +42,16 @@ export const employeeData=[
     "Sex": "Male",
     "Age": 30,
     "Position": "Project Manager",
-    "Department": "Project Management"
+    "Department": "Project Management",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":2
   },
   {
     "EmployeeID": "ADW004",
@@ -33,7 +60,16 @@ export const employeeData=[
     "Sex": "Female",
     "Age": 22,
     "Position": "Intern",
-    "Department": "HR"
+    "Department": "HR",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":4
   },
   {
     "EmployeeID": "ADW005",
@@ -42,7 +78,16 @@ export const employeeData=[
     "Sex": "Male",
     "Age": 35,
     "Position": "System Administrator",
-    "Department": "IT"
+    "Department": "IT",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":3
   },
   {
     "EmployeeID": "ADW006",
@@ -51,7 +96,16 @@ export const employeeData=[
     "Sex": "Female",
     "Age": 27,
     "Position": "Database Administrator",
-    "Department": "IT"
+    "Department": "IT",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":3
   },
   {
     "EmployeeID": "ADW007",
@@ -60,7 +114,16 @@ export const employeeData=[
     "Sex": "Male",
     "Age": 32,
     "Position": "Financial Analyst",
-    "Department": "Finance"
+    "Department": "Finance",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":2
   },
   {
     "EmployeeID": "ADW008",
@@ -69,7 +132,16 @@ export const employeeData=[
     "Sex": "Female",
     "Age": 29,
     "Position": "Marketing Specialist",
-    "Department": "Marketing"
+    "Department": "Marketing",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":4
   },
   {
     "EmployeeID": "ADW009",
@@ -78,7 +150,16 @@ export const employeeData=[
     "Sex": "Male",
     "Age": 26,
     "Position": "Customer Support Representative",
-    "Department": "Customer Service"
+    "Department": "Customer Service",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":4
   },
   {
     "EmployeeID": "ADW010",
@@ -87,7 +168,16 @@ export const employeeData=[
     "Sex": "Female",
     "Age": 31,
     "Position": "Research Scientist",
-    "Department": "Research and Development"
+    "Department": "Research and Development",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":4
   },
   {
     "EmployeeID": "ADW011",
@@ -96,7 +186,16 @@ export const employeeData=[
     "Sex": "Male",
     "Age": 23,
     "Position": "Software Engineer",
-    "Department": "Engineering"
+    "Department": "Engineering",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":5
   },
   {
     "EmployeeID": "ADW012",
@@ -105,7 +204,16 @@ export const employeeData=[
     "Sex": "Female",
     "Age": 24,
     "Position": "UX/UI Designer",
-    "Department": "Design"
+    "Department": "Design",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":5
   },
   {
     "EmployeeID": "ADW013",
@@ -114,7 +222,16 @@ export const employeeData=[
     "Sex": "Male",
     "Age": 28,
     "Position": "Product Manager",
-    "Department": "Product Management"
+    "Department": "Product Management",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":5
   },
   {
     "EmployeeID": "ADW014",
@@ -123,7 +240,16 @@ export const employeeData=[
     "Sex": "Female",
     "Age": 25,
     "Position": "Sales Representative",
-    "Department": "Sales"
+    "Department": "Sales",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":4
   },
   {
     "EmployeeID": "ADW015",
@@ -132,7 +258,16 @@ export const employeeData=[
     "Sex": "Male",
     "Age": 33,
     "Position": "Human Resources Manager",
-    "Department": "HR"
+    "Department": "HR",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":5
   },
   {
     "EmployeeID": "ADW016",
@@ -141,7 +276,16 @@ export const employeeData=[
     "Sex": "Female",
     "Age": 30,
     "Position": "Quality Assurance Specialist",
-    "Department": "QA"
+    "Department": "QA",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":4
   },
   {
     "EmployeeID": "ADW017",
@@ -150,7 +294,16 @@ export const employeeData=[
     "Sex": "Male",
     "Age": 29,
     "Position": "Network Engineer",
-    "Department": "IT"
+    "Department": "IT",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":4
   },
   {
     "EmployeeID": "ADW018",
@@ -159,7 +312,16 @@ export const employeeData=[
     "Sex": "Female",
     "Age": 26,
     "Position": "Content Writer",
-    "Department": "Marketing"
+    "Department": "Marketing",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":2
   },
   {
     "EmployeeID": "ADW019",
@@ -168,7 +330,16 @@ export const employeeData=[
     "Sex": "Male",
     "Age": 27,
     "Position": "Business Analyst",
-    "Department": "Business Analysis"
+    "Department": "Business Analysis",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":4
   },
   {
     "EmployeeID": "ADW020",
@@ -177,6 +348,15 @@ export const employeeData=[
     "Sex": "Female",
     "Age": 24,
     "Position": "UI Developer",
-    "Department": "Engineering"
+    "Department": "Engineering",
+    "QualityOfWork": 5,
+    "Productivity": 4,
+    "Efficiency": 3,
+    "GoalAchievement": 4,
+    "TeamWork": 5,
+    "ProblemSolving": 4,
+    "Punctuality": 2,
+    "Ethics": 5,
+    "kPI":3
   }
 ]

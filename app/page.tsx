@@ -5,7 +5,7 @@ import { HiOutlineBadgeCheck } from "react-icons/hi";
 import { BsBookmarks, BsChevronRight } from "react-icons/bs";
 import PopularCourses from "@/components/courses/popular";
 import { employeeData } from "./data";
-import { Pagination } from "@nextui-org/react";
+import { Pagination, Progress } from "@nextui-org/react";
 import { useState } from "react";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import EmployeeCard from "@/components/card/employee";
@@ -149,11 +149,21 @@ export default function Home() {
 <div className="text-lg dm-sans text-gray-400">No events yet</div>
 							<div className="text-sm dm-sans text-gray-400">Check back later</div>
 							</div>
-							
+							<h3  className=" bg-gray-800 py-3 px-4 text-white">List Of All Employeees ID</h3>
 							<div className="overflow-y-scroll w-full">
 							{employeeData.map((employee, index) =>(
-								<div className=" my-7">
+								<div className=" my-7 flex gap-4">
 										<h5>{employee.EmployeeID} </h5>
+										<Progress
+                  label="KPI "
+                  size="sm"
+                  value={employee.kPI}
+                  maxValue={5}
+                  color="warning"
+                  // formatOptions={{style: "currency", currency: "ARS"}}
+                  showValueLabel={true}
+                  className="max-w-md"
+                />
 								</div>
 								
 							))} 

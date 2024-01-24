@@ -16,9 +16,9 @@ const SideBar = () => {
   const links = [
     { text: 'Human Resource', icon: AiFillHome, link: "/" },
     { text: 'Performance Appraisal', icon: AiOutlineBook, link: "performance-appraisal" },
-    { text: 'Employment Details', icon: AiTwotoneCalendar, link: "explore-courses" },
+    { text: 'Employment Details', icon: AiTwotoneCalendar, link: "" },
     { text: 'Report & Analysis', icon: HiOutlineBadgeCheck, link: "" },
-    { text: 'Settings', icon: AiOutlineSetting, link: "/" },
+    { text: 'Settings', icon: AiOutlineSetting, link: "" },
   ]
 
   const { user } = useAuth()
