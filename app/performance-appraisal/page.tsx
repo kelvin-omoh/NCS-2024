@@ -47,106 +47,101 @@ const page = () => {
     setCurrentPage(page);
   };
 
-
-
-
-
-
   return (
     <>
-    <div className="flex flex-col gap-3 px-4">
-     
+      <div className="flex flex-col gap-3 px-4">
 
-     <div className="flex   justify-between py-5 items-center  gap-3">
-       <h1 className=' flex justify-end text-[1.1em] font-semibold  bg'>No of Employee is :  {employeeData.length} /50</h1>
 
-       <Popover className='  ' placement="right">
-         <PopoverTrigger className=' justify-end flex w-fit '>
-           <Button className=' flex  justify-end  bg-blue-100 '>
-             <Progress
-               label="Percentage of employed  staff = "
-               size="sm"
-               value={employeeData.length}
-               maxValue={50}
-               color="warning"
-               // formatOptions={{style: "currency", currency: "ARS"}}
-               showValueLabel={true}
-               className="max-w-md"
-             />
-           </Button>
-         </PopoverTrigger>
-         <PopoverContent>
-           <div className="px-1 py-2">
-             <div className="text-small font-bold">Summary</div>
-             <div className="text-tiny">In our organiztion, we currently have {employeeData.length} employees out of a total capacity of 50, resulting in an employee utilization rate of {employeeData.length / 50 * 100}. </div>
-           </div>
-         </PopoverContent>
-       </Popover>
-     </div>
+        <div className="flex   justify-between py-5 items-center  gap-3">
+          <h1 className=' flex justify-end text-[1.1em] font-semibold  bg'>No of Employee is :  {employeeData.length} /50</h1>
 
-     <Table
-       color={selectedColor}
-       selectionMode="single"
-       defaultSelectedKeys={["2"]}
-       aria-label="Example static collection table"
-     >
-       <TableHeader>
-         <TableColumn>S/N</TableColumn>
-         <TableColumn>Employee ID</TableColumn>
-         <TableColumn>First Name</TableColumn>
-         <TableColumn>Last Name</TableColumn>
-         <TableColumn>Sex</TableColumn>
-         <TableColumn>Age</TableColumn>
-         <TableColumn>Position</TableColumn>
-         <TableColumn>Department</TableColumn>
-       </TableHeader>
-       <TableBody>
+          <Popover className='  ' placement="right">
+            <PopoverTrigger className=' justify-end flex w-fit '>
+              <Button className=' flex  justify-end  bg-blue-100 '>
+                <Progress
+                  label="Percentage of employed  staff = "
+                  size="sm"
+                  value={employeeData.length}
+                  maxValue={50}
+                  color="warning"
+                  // formatOptions={{style: "currency", currency: "ARS"}}
+                  showValueLabel={true}
+                  className="max-w-md"
+                />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <div className="px-1 py-2">
+                <div className="text-small font-bold">Summary</div>
+                <div className="text-tiny">In our organiztion, we currently have {employeeData.length} employees out of a total capacity of 50, resulting in an employee utilization rate of {employeeData.length / 50 * 100}. </div>
+              </div>
+            </PopoverContent>
+          </Popover>
+        </div>
 
-         {currentEmployees.map((employee, i) => (
-           <TableRow key={i}>
-             <TableCell>{i + 1}</TableCell>
-             <TableCell>{employee.EmployeeID}</TableCell>
-             <TableCell>{employee.FirstName}</TableCell>
-             <TableCell>{employee.LastName}</TableCell>
-             <TableCell>{employee.Sex}</TableCell>
-             <TableCell>{employee.Age}</TableCell>
-             <TableCell>{employee.Position}</TableCell>
-             <TableCell>{employee.Department}</TableCell>
-           </TableRow>
-         ))}
-       </TableBody>
-     </Table>
-     <RadioGroup
-       label="Selection color"
-       orientation="horizontal"
-       value={selectedColor}
-       onValueChange={setSelectedColor}
-     >
-       {colors.map((color: any) => (
-         <Radio
-           key={color}
-           color={color}
-           value={color}
-           className="capitalize"
-         >
-           {color}
-         </Radio>
-       ))}
+        <Table
+          color={selectedColor}
+          selectionMode="single"
+          defaultSelectedKeys={["2"]}
+          aria-label="Example static collection table"
+        >
+          <TableHeader>
+            <TableColumn>S/N</TableColumn>
+            <TableColumn>Employee ID</TableColumn>
+            <TableColumn>First Name</TableColumn>
+            <TableColumn>Last Name</TableColumn>
+            <TableColumn>Sex</TableColumn>
+            <TableColumn>Age</TableColumn>
+            <TableColumn>Position</TableColumn>
+            <TableColumn>Department</TableColumn>
+          </TableHeader>
+          <TableBody>
 
-       <Pagination
-         loop
-         showControls
-         color="success"
-         total={totalPages}
-         initialPage={currentPage}
-         onChange={handlePageChange}
-       />
+            {currentEmployees.map((employee, i) => (
+              <TableRow key={i}>
+                <TableCell>{i + 1}</TableCell>
+                <TableCell>{employee.EmployeeID}</TableCell>
+                <TableCell>{employee.FirstName}</TableCell>
+                <TableCell>{employee.LastName}</TableCell>
+                <TableCell>{employee.Sex}</TableCell>
+                <TableCell>{employee.Age}</TableCell>
+                <TableCell>{employee.Position}</TableCell>
+                <TableCell>{employee.Department}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+        <RadioGroup
+          label="Selection color"
+          orientation="horizontal"
+          value={selectedColor}
+          onValueChange={setSelectedColor}
+        >
+          {colors.map((color: any) => (
+            <Radio
+              key={color}
+              color={color}
+              value={color}
+              className="capitalize"
+            >
+              {color}
+            </Radio>
+          ))}
 
-     </RadioGroup>
+          <Pagination
+            loop
+            showControls
+            color="success"
+            total={totalPages}
+            initialPage={currentPage}
+            onChange={handlePageChange}
+          />
 
-     
+        </RadioGroup>
 
-   </div>
+
+
+      </div>
 
     </>
   );
