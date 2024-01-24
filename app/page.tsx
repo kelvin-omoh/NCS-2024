@@ -51,7 +51,7 @@ export default function Home() {
 		]
 	}
 
-	const itemsPerPage = 6;
+	const itemsPerPage = 8;
 	const totalPages = Math.ceil(employeeData.length / itemsPerPage);
   
 	const [currentPage, setCurrentPage] = useState(1);
@@ -70,7 +70,7 @@ export default function Home() {
 
 
 
-	
+
 	const {isOpen, onOpen, onOpenChange} = useDisclosure();
 	const [selectedEmployee, setSelectedEmployee] = useState<any>(null);
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -89,10 +89,10 @@ export default function Home() {
 			<section className="flex gap-2 h-[200vh] py-4 px-1">
 				{/* Left */}
 				<section className="flex gap-4 justify-between w-full px-4 relative">
-					<div className="w-3/4 px-2">
+					<div className="w-full px-2">
 						<h1 className="text-xl font-medium mb-6">Learning Overview</h1>
 
-						<div className="grid grid-cols-3 gap-5">
+						<div className="grid grid-cols-4 gap-5">
 						{currentEmployees.map((employee,index) => (
 								<div key={index} className="text-black w-full bg-white flex   text-[.9em] pb-1 shadow-lg rounded">
 									<div className="bg-black h-11 px-3 py-2 rounded-t-xl text-white flex gap-3 items-center text-sm justify-start font-normal">
@@ -141,7 +141,7 @@ export default function Home() {
 
 
 					{/* Right */}
-					<div className="w-1/4">
+					{/* <div className="w-1/4">
 						<div className="text-black bg-white px-3 py-4 flex flex-col gap-5  rounded-lg ">
 							<div className=" text-[1.3em] bg-slate-100 px-1 py-1 shadow-lg">
 								<h1 className=" text-[.9em]">Upcoming event</h1>
@@ -153,7 +153,7 @@ export default function Home() {
 
 						</div>
 
-					</div>
+					</div> */}
 
 
 				

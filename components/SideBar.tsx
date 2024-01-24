@@ -91,7 +91,7 @@ const SideBar = () => {
       <ul className='mb-9'>
         <li className=' flex text-[1.4em] pt-9 font-bold items-center'>
           <Image className=' h-[2rem] w-[2rem] flex flex-col mr-3 rounded-full ' src={Logo} alt='' /> JAKS</li>
-          <p className="text-[.6em] my-4 font-medium text-gray-400">
+          <p className="text-[.7em] my-4 font-medium text-blue-400">
                 Justified Assessment & Key Solutions
                 </p>
       </ul>
